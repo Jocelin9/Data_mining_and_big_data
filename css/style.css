@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+  --main-color:#2980b9;
+  --black:#444;
+  --bg:#fff;
+  --light-bg:#eee;
+  --light-color:#666;
+  --border:1px solid rgba(0,0,0,.1);
+  --box-shadow:0 5px 10px rgba(0,0,0,.1);
+}
+html{
+ 
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition:.2s linear;
+}
+
+body{
+  background:var(--light-bg);
+  overflow: hidden;
+}
+
+body.active{
+  --black:#fff;
+  --bg:#000000;
+  --light-bg:#000000;
+  --light-color:#eee;
+  --border:1px solid rgba(255,255,255,.1);
+  --box-shadow:0 5px 10px rgba(0,0,0,.3);
+}
+
+#theme-open{
+  position: fixed;
+  top:15px; right:20px;
+  font-size: 40px;
+  color:var(--black);
+  cursor: pointer;
+  z-index: 10;
+}
+.block{
+  color: var(--black);
+}
+.block h1{
+  color: var(--main-color);
+}
+
+ul{
+  list-style: none;
+}
+.references{
+  text-align: left;
+  
+}
+.themes-container{
+  justify-content: space-between;
+  position:fixed;
+  top:0; right:-100%;
+  background:var(--bg);
+  border-left: var(--border);
+  height: auto;
+  width:350px;
+  z-index: 10000;
+  text-align: right;
+  padding:20px;
+}
+
+
+.themes-container.active{
+  right:0;
+}
+
+.themes-container #theme-close{
+  font-size: 40px;
+  color:var(--black);
+  cursor: pointer;
+}
+
+.themes-container h3{
+  text-align: center;
+  border-top: var(--border);
+  border-bottom: var(--border);
+  color: #b900f1;
+  border-radius: 20px;
+  padding:15px 0;
+  margin:20px 0;
+}
+.themes-container a:hover{
+ color: var(--main-color);
+}
+
+.themes-container .theme-toggler{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.themes-container .theme-toggler span{
+  color:var(--light-color);
+}
+
+.themes-container .theme-toggler .toggler{
+  height:40px;
+  width:100px;
+  border-radius: 50px;
+  background:var(--light-bg);
+  position: relative;
+  cursor: pointer;
+  border:var(--border);
+  margin:0 10px;
+}
+
+.themes-container .theme-toggler .toggler::before{
+  content:'';
+  position: absolute;
+  top:5px; left:5px;
+  height:28px;
+  width:28px;
+  border-radius: 50%;
+  background:#fff;
+  transition:.2s linear;
+}
+
+.themes-container .theme-toggler.active .toggler::before{
+  left:65px;
+}
+
+.themes-container .theme-colors{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap:15px;
+}
+
+.themes-container .theme-colors .color{
+  border-radius: 5px;
+  height:50px;
+  width:50px;
+  cursor: pointer;
+}
+
+.themes-container .theme-colors .color:hover{
+  opacity: .5;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 60px;
+  margin:10px;
+  min-height: 50vh;
+  border-radius: 50px;
+}
+
+.container .content{
+  background: var(--bg);
+  border-radius: 5px;
+  padding:20px;
+  box-shadow: var(--box-shadow);
+  border:var(--border);
+  text-align: center;
+  width: 80%;
+}
+
+.container .content img{
+  width:100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.container .content h3{
+  color:var(--black);
+  font-size: 25px;
+}
+
+.container .content p{
+  color:var(--light-color);
+  font-size: 15px;
+  line-height: 2;
+  padding:10px 0;
+  text-align: left;
+}
+
+.container .content .btn{
+  margin-top: 10px;
+  display: inline-block;
+  border-radius: 5px;
+  padding:10px 30px;
+  color:#fff;
+  background: var(--main-color);
+  font-size: 17px;
+}
+
+.container .content .btn:hover{
+  opacity: .8;
+  letter-spacing: 1px;
+}
+
+
+::selection{
+  background: #7d2ae8;
+  color: var(--black)
+}
+.accordion{
+  display: flex;
+  max-width: 1010px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 25px;
+  padding: 45px 90px 45px 60px;
+}
+.accordion .image-box{
+  height: 360px;
+  width: 300px;
+}
+.accordion .image-box img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  background: #7d2ae8;
+}
+.accordion .accordion-text{
+  width: 60%;
+}
+.accordion .accordion-text .title{
+  font-size: 35px;
+  font-weight: 600;
+  color: var(--main-color);
+  font-family: 'Fira Sans', sans-serif;
+}
+.accordion .accordion-text .faq-text{
+  margin-top: 25px;
+  height: 263px;
+  overflow-y: auto;
+}
+.faq-text::-webkit-scrollbar{
+  display: none;
+}
+.accordion .accordion-text li{
+  list-style: none;
+  cursor: pointer;
+}
+.accordion-text li .question-arrow{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.accordion-text li .question-arrow .question{
+  font-size: 18px;
+  font-weight: 500;
+  color: #b900f1;
+  transition: all 0.3s ease;
+}
+.accordion-text li .question-arrow .arrow{
+  font-size: 20px;
+  color: #b900f1;
+  transition: all 0.3s ease;
+}
+.accordion-text li.showAnswer .question-arrow .arrow{
+  transform: rotate(-180deg);
+}
+.accordion-text li:hover .question-arrow .question,
+.accordion-text li:hover .question-arrow .arrow{
+  
+  color: var(--main-color);
+}
+.accordion-text li.showAnswer .question-arrow .question,
+.accordion-text li.showAnswer .question-arrow .arrow{
+  color: var(--main-color);
+}
+.accordion-text li .line{
+  display: block;
+  height: 2px;
+  width: 100%;
+  margin: 10px 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+.accordion-text li p{
+  width: 92%;
+  font-size: 15px;
+  font-weight: 500;
+  color: #595959;
+  display: none;
+}
+.accordion-text li.showAnswer p{
+  display: block;
+}
+
+@media (max-width: 994px) {
+  body{
+    padding: 40px 20px;
+  }
+  .accordion{
+    max-width: 100%;
+    padding: 45px 60px 45px 60px;
+  }
+  .accordion .image-box{
+    height: 360px;
+    width: 220px;
+  }
+  .accordion .accordion-text{
+    width: 63%;
+  }
+}
+@media (max-width: 820px) {
+  .accordion{
+    flex-direction: column;
+  }
+  .accordion .image-box{
+    height: 360px;
+    width: 300px;
+    
+    width: 100%;
+    border-radius: 25px;
+    padding: 30px;
+  }
+  .accordion .accordion-text{
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 538px) {
+  .accordion{
+    padding: 25px;
+  }
+  .accordion-text li p{
+    width: 98%;
+  }
+}
